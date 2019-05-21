@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class ArtistsController < ApplicationController
-  def index; end
+  def index
+    @artists = Artist.all
+  end
 
-  def show; end
+  def show
+    @artist = Artist.find(params[:id])
+  end
 
   def new
     @artist = Artist.new

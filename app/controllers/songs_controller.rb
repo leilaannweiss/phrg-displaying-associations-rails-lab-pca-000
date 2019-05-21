@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class SongsController < ApplicationController
-  def index; end
+  def index
+    @songs = Song.all
+  end
 
-  def show; end
+  def show
+    @song = Song.find(params[:id])
+  end
 
   def new; end
 
